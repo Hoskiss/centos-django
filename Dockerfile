@@ -1,7 +1,11 @@
-FROM FROM python:3.7.3
+FROM centos/python-36-centos7
+
+USER root
 
 # nginx to rever proxy if we use sagemaker, would not configure it for now
-# RUN apt-get update && apt-get install -y --no-install-recommends git
+RUN yum -y update
+
+RUN yum install vim-X11 vim-common vim-enhanced vim-minimal
 
 # RUN apt-get install -y build-essential libsm6 libxtst6 libxrender1 libfontconfig1 python3-pip vim
 
